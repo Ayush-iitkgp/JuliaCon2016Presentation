@@ -343,7 +343,16 @@ $$\mathcal K_+ = \{x: x\geq 0\}$$<ul>
 $$\mathcal K_{\mathrm{SOC}} = \{(x,t): \|x\|_2 \leq t\}$$<ul>
 <li>semidefinite cone </li>
 </ul>
-$$\mathcal K_{\mathrm{SDP}} = \{X: X = X^T,~ v^T X v \geq 0,~ \forall v \in \mathbf{R}^n\}$$<p><strong>Does this slide look complicated? It turns out that the above solvers only understand the conic form which is hard for us to write and this is the reason why we need a package for convex optimization where we can express our problem in functional form and let the package manage the difficult part of converting the problem to conic form</strong></p>
+$$\mathcal K_{\mathrm{SDP}} = \{X: X = X^T,~ v^T X v \geq 0,~ \forall v \in \mathbf{R}^n\}$$
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Does the previous slide look complicated? It turns out that the above solvers only understand the conic form which is hard for us to write and this is the reason why we need a package for convex optimization where we can express our problem in functional form and let the package manage the difficult part of converting the problem to conic form.</strong></p>
 
 </div>
 </div>
@@ -359,7 +368,7 @@ $$\mathcal K_{\mathrm{SDP}} = \{X: X = X^T,~ v^T X v \geq 0,~ \forall v \in \mat
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="k">using</span> <span class="n">Convex</span>
@@ -396,7 +405,7 @@ WARNING: Method definition norm(Convex.AbstractExpr, Symbol) in module Convex at
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="c"># Scalar variable</span>
@@ -415,7 +424,7 @@ WARNING: Method definition norm(Convex.AbstractExpr, Symbol) in module Convex at
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -445,7 +454,7 @@ vexity: Convex.AffineVexity()</pre>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="c"># indexing, multiplication, addition</span>
@@ -463,7 +472,7 @@ vexity: Convex.AffineVexity()</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -492,7 +501,7 @@ vexity: Convex.ConcaveVexity()
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="c"># affine equality constraint</span>
@@ -508,7 +517,7 @@ vexity: Convex.ConcaveVexity()
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -520,7 +529,7 @@ size: (3, 1)
 sign: Convex.NoSign()
 vexity: Convex.AffineVexity()
 
-rhs: [0.9396838440256501,-1.3160206804115133,0.5104196149981136]
+rhs: [-1.6048077944321295,2.1044876445367,0.6535176954608789]
 vexity: Convex.AffineVexity()</pre>
 </div>
 
@@ -532,7 +541,7 @@ vexity: Convex.AffineVexity()</pre>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="c"># convex inequality constraint</span>
@@ -547,7 +556,7 @@ vexity: Convex.AffineVexity()</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -583,7 +592,7 @@ vexity: Convex.ConvexVexity()</pre>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="n">objective</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
@@ -598,7 +607,7 @@ vexity: Convex.ConvexVexity()</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -618,7 +627,7 @@ size: (3, 1)
 sign: Convex.NoSign()
 vexity: Convex.AffineVexity()
 
-rhs: [0.9396838440256501,-1.3160206804115133,0.5104196149981136]
+rhs: [-1.6048077944321295,2.1044876445367,0.6535176954608789]
 vexity: Convex.AffineVexity()
 		Constraint:
 &lt;= constraint
@@ -638,10 +647,10 @@ current status: not yet solved</pre>
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="c"># solve the problem</span>
@@ -669,21 +678,21 @@ Variables n = 8, constraints m = 15
 Cones:	primal zero / dual free vars: 4
 	linear vars: 3
 	soc vars: 8, soc blks: 2
-Setup time: 1.08e-04s
+Setup time: 8.36e-05s
 ----------------------------------------------------------------------------
  Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
 ----------------------------------------------------------------------------
-     0|      inf       inf      -nan      -inf       inf       inf  2.74e-05 
-    20|      inf       inf      -nan      -inf      -inf       inf  5.82e-05 
+     0|      inf       inf      -nan      -inf       inf       inf  2.49e-05 
+    20|      inf       inf      -nan      -inf      -inf       inf  5.35e-05 
 ----------------------------------------------------------------------------
 Status: Unbounded
-Timing: Solve time: 6.46e-05s
-	Lin-sys: nnz in L factor: 69, avg solve time: 6.71e-07s
-	Cones: avg projection time: 2.12e-07s
+Timing: Solve time: 5.92e-05s
+	Lin-sys: nnz in L factor: 69, avg solve time: 6.34e-07s
+	Cones: avg projection time: 2.07e-07s
 ----------------------------------------------------------------------------
 Certificate of dual infeasibility:
-dist(s, K) = 8.9589e-21
-|Ax + s|_2 * |c|_2 = 2.5774e-06
+dist(s, K) = 8.2611e-21
+|Ax + s|_2 * |c|_2 = 2.3690e-06
 c&apos;x = -1.0000
 ============================================================================
 </pre>
@@ -697,7 +706,7 @@ c&apos;x = -1.0000
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -717,7 +726,7 @@ size: (3, 1)
 sign: Convex.NoSign()
 vexity: Convex.AffineVexity()
 
-rhs: [0.9396838440256501,-1.3160206804115133,0.5104196149981136]
+rhs: [-1.6048077944321295,2.1044876445367,0.6535176954608789]
 vexity: Convex.AffineVexity()
 		Constraint:
 &lt;= constraint
@@ -737,10 +746,10 @@ current status: Unbounded</pre>
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="n">p</span><span class="o">.</span><span class="n">optval</span>
@@ -754,7 +763,7 @@ current status: Unbounded</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -766,10 +775,10 @@ current status: Unbounded</pre>
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="n">x</span><span class="o">.</span><span class="n">value</span>
@@ -783,11 +792,11 @@ current status: Unbounded</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>-0.4999994481163632</pre>
+<pre>-0.49999943073238445</pre>
 </div>
 
 </div>
@@ -896,10 +905,11 @@ current status: Unbounded</pre>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="c"># Creating a real variable</span>
+<span class="k">using</span> <span class="n">Convex</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">()</span>
 </pre></div>
 
@@ -907,10 +917,29 @@ current status: Unbounded</pre>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Variable of
+size: (1, 1)
+sign: Convex.NoSign()
+vexity: Convex.AffineVexity()</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="c"># Creating an objective function</span>
@@ -925,15 +954,18 @@ current status: Unbounded</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-LoadError: UndefVarError: x not defined
-while loading In[1], in expression starting on line 1
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
 
- [inlined code] from ./essentials.jl:78
- in include_string(::ASCIIString, ::ASCIIString) at ./loading.jl:371</pre>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>AbstractExpr with
+head: *
+size: (1, 1)
+sign: Convex.NoSign()
+vexity: Convex.AffineVexity()
+</pre>
 </div>
+
 </div>
 
 </div>
@@ -942,7 +974,7 @@ while loading In[1], in expression starting on line 1
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="c"># Creating complex equality constraints</span>
@@ -954,10 +986,33 @@ while loading In[1], in expression starting on line 1
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Constraint:
+&lt;= constraint
+lhs: Variable of
+size: (1, 1)
+sign: Convex.NoSign()
+vexity: Convex.AffineVexity()
+rhs: 5
+vexity: Convex.AffineVexity()</pre>
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span class="n">p</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>
@@ -967,13 +1022,55 @@ while loading In[1], in expression starting on line 1
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Problem:
+minimize AbstractExpr with
+head: *
+size: (1, 1)
+sign: Convex.NoSign()
+vexity: Convex.AffineVexity()
+
+subject to
+Constraint:
+== constraint
+lhs: AbstractExpr with
+head: *
+size: (1, 1)
+sign: Convex.ComplexSign()
+vexity: Convex.AffineVexity()
+
+rhs: 6 + 9im
+vexity: Convex.AffineVexity()
+		Constraint:
+&lt;= constraint
+lhs: Variable of
+size: (1, 1)
+sign: Convex.NoSign()
+vexity: Convex.AffineVexity()
+rhs: 5
+vexity: Convex.AffineVexity()
+current status: not yet solved</pre>
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span class="n">solve</span><span class="o">!</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span class="n">solve</span><span class="o">!</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="n">false</span><span class="p">)</span>
 <span class="n">x</span><span class="o">.</span><span class="n">value</span>
 <span class="n">p</span><span class="o">.</span><span class="n">optval</span>
 
@@ -986,7 +1083,58 @@ while loading In[1], in expression starting on line 1
 </div>
 </div>
 
-</div></div></section></section><section><section>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>----------------------------------------------------------------------------
+	SCS v1.1.8 - Splitting Conic Solver
+	(c) Brendan O&apos;Donoghue, Stanford University, 2012-2015
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 5
+eps = 1.00e-04, alpha = 1.80, max_iters = 20000, normalize = 1, scale = 5.00
+Variables n = 2, constraints m = 4
+Cones:	primal zero / dual free vars: 3
+	linear vars: 1
+Setup time: 5.35e-05s
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0|      inf       inf      -nan       inf      -inf       inf  2.26e-05 
+    60| 7.69e-06  5.72e-05  3.14e-05  6.00e+00  6.00e+00  9.46e-17  1.02e-04 
+----------------------------------------------------------------------------
+Status: Solved
+Timing: Solve time: 1.04e-04s
+	Lin-sys: nnz in L factor: 11, avg solve time: 3.59e-07s
+	Cones: avg projection time: 1.99e-07s
+----------------------------------------------------------------------------
+Error metrics:
+dist(s, K) = 1.0750e-16, dist(y, K*) = 0.0000e+00, s&apos;y/m = 2.9317e-17
+|Ax + s - b|_2 / (1 + |b|_2) = 7.6946e-06
+|A&apos;y + c|_2 / (1 + |c|_2) = 5.7200e-05
+|c&apos;x + b&apos;y| / (1 + |c&apos;x| + |b&apos;y|) = 3.1364e-05
+----------------------------------------------------------------------------
+c&apos;x = 5.9999, -b&apos;y = 6.0003
+============================================================================
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5.999939822156568</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
